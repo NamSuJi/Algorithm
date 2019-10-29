@@ -13,7 +13,6 @@ long long fibo(long long int num)
     else
         return arr[num]=(fibo(num-1)+fibo(num-2))%10009;
 }
-
 int main(void)
 {
     long long int num;
