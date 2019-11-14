@@ -2,19 +2,13 @@ import java.util.Scanner;
 class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    int[] ar = new int[1000000];
     int n = sc.nextInt();
-    int l,i,k,sum=0,a=0,total=0;
-    int num = n;
-    for(i=0;i<n;i++){
-      ar[i] = num%10; total += ar[i];
-      if(num>0){ num /= 10; a++; }
-      else break;
+    int sum=0,reverseN=0;
+    while(n!=0){
+      reverseN = reverseN*10+n%10;
+      sum+=n%10;
+      n/=10;
     }
-    for(i=0;i<a;i++){
-      for(k=1;k<a-i;k++){ ar[i] = ar[i] * 10; }
-      sum += ar[i];
-    }
-    System.out.print(sum+"\n"+ total);
+    System.out.print(reverseN+"\n"+ sum);
   }
 }
